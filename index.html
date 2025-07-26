@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AYOUBE - اختيار اللعبة</title>
+  <title>اختيار لعبتك</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -12,187 +12,190 @@
       background-color: #000;
       color: #fff;
     }
-
     header {
+      background-color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid #222;
+    }
+    header .username {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+    }
+    header .username img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #7b4dff;
+    }
+    header nav a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    header nav a.active {
+      color: #7b4dff;
+      border-bottom: 2px solid #7b4dff;
+      padding-bottom: 4px;
+    }
+
+    .profile-circle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .profile-circle img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid #7b4dff;
+    }
+
+    .profile-circle span {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    .title {
+      text-align: center;
+      margin: 30px 0 10px;
+      font-size: 22px;
+    }
+
+    .game-card {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #111;
-      padding: 12px 16px;
-      border-bottom: 1px solid #333;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      color: #bbb;
-      text-decoration: none;
-      font-weight: 400;
-    }
-
-    .nav-links a.active {
-      color: #a277ff;
-      border-bottom: 2px solid #a277ff;
-    }
-
-    .profile-section {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .profile-section img {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-    }
-
-    main {
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .profile-pic {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      border: 2px solid #a277ff;
-      overflow: hidden;
-    }
-
-    .profile-pic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    h2 {
-      font-size: 22px;
-      margin-bottom: 30px;
-    }
-
-    .game-option {
       background: #111;
       border: 2px solid transparent;
       border-radius: 14px;
-      padding: 16px 20px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      padding: 12px 16px;
+      margin: 12px auto;
+      width: 90%;
+      transition: 0.3s;
     }
 
-    .game-option.active {
-      border-color: #a277ff;
-      box-shadow: 0 0 10px #a277ff50;
+    .game-card.selected {
+      border-color: #7b4dff;
+      box-shadow: 0 0 10px #7b4dff;
     }
 
-    .game-option img {
+    .game-card img {
       width: 50px;
       height: 50px;
       border-radius: 10px;
     }
 
-    .game-text {
+    .game-info {
+      flex: 1;
       text-align: right;
+      margin-right: 12px;
     }
 
-    .game-title {
-      font-weight: 700;
+    .game-info h3 {
+      margin: 0;
       font-size: 16px;
     }
 
-    .game-desc {
-      color: #ccc;
+    .game-info p {
+      margin: 3px 0 0;
+      color: #aaa;
       font-size: 13px;
-      margin-top: 5px;
     }
 
-    .next-btn {
-      background: #a277ff;
+    .next-button {
+      display: block;
+      margin: 25px auto;
+      padding: 12px 30px;
+      background-color: #7b4dff;
+      color: white;
       border: none;
-      padding: 12px 40px;
+      border-radius: 24px;
       font-size: 16px;
-      border-radius: 25px;
-      color: #fff;
       cursor: pointer;
-      margin-top: 20px;
     }
 
-    footer {
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #111;
       display: flex;
       justify-content: space-around;
-      background: #111;
       padding: 12px 0;
-      border-top: 1px solid #333;
-      margin-top: 40px;
+      border-top: 1px solid #222;
     }
 
-    footer a {
+    .bottom-nav a {
       color: #aaa;
-      font-size: 14px;
       text-decoration: none;
+      font-size: 14px;
     }
 
+    .bottom-nav a.active {
+      color: #7b4dff;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="nav-links">
-      <a href="#" class="active">الرئيسية</a>
-      <a href="#">الألعاب</a>
+    <div class="username">
+      <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" alt="AYOUBE">
+      AYOUBE
+    </div>
+    <nav>
       <a href="#">تسجيل الدخول</a>
-    </div>
-    <div class="profile-section">
-      <span>AYOUBE</span>
-      <img src="https://postimg.cc/VdknWbsX" alt="Profile" />
-    </div>
+      <a href="#">الألعاب</a>
+      <a href="#" class="active">الرئيسية</a>
+    </nav>
   </header>
 
-  <main>
-    <div class="profile-pic">
-      <img src="https://postimg.cc/VdknWbsX" alt="AYOUBE" />
+  <div class="profile-circle">
+    <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" alt="AYOUB">
+    <span>AYOUBE</span>
+  </div>
+
+  <h2 class="title">اختر لعبتك المفضلة</h2>
+
+  <div class="game-card" onclick="selectCard(this)">
+    <div class="game-info">
+      <h3>لعبة التفاحة</h3>
+      <p>أكثر من 1000 مستوى آمن</p>
     </div>
-    <h2>اختر لعبتك المفضلة</h2>
+    <img src="https://i.postimg.cc/PpcsVDsN/apple.jpg" alt="Apple Game">
+  </div>
 
-    <div class="game-option active" onclick="selectGame(this)">
-      <div class="game-text">
-        <div class="game-title">لعبة التفاحة</div>
-        <div class="game-desc">أكثر من 1000 مستوى آمن</div>
-      </div>
-      <img src="https://i.postimg.cc/PpcsVDsN/apple.jpg" alt="Apple Game" />
+  <div class="game-card" onclick="selectCard(this)">
+    <div class="game-info">
+      <h3>لعبة الطيارة</h3>
+      <p>تحدي الطيران والسرعة</p>
     </div>
+    <img src="https://i.postimg.cc/HJDrRJmZ/crash.jpg" alt="Crash Game">
+  </div>
 
-    <div class="game-option" onclick="selectGame(this)">
-      <div class="game-text">
-        <div class="game-title">لعبة الطيارة</div>
-        <div class="game-desc">تحدي الطيران والسرعة</div>
-      </div>
-      <img src="https://i.postimg.cc/HJDrRJmZ/crash.jpg" alt="Crash Game" />
-    </div>
+  <button class="next-button">التالي ←</button>
 
-    <button class="next-btn">التالي ←</button>
-  </main>
-
-  <footer>
+  <div class="bottom-nav">
     <a href="#">تيليجرام</a>
     <a href="#">واتساب</a>
     <a href="#">انستجرام</a>
-  </footer>
+    <a href="#" class="active">الرئيسية</a>
+  </div>
 
   <script>
-    function selectGame(element) {
-      document.querySelectorAll('.game-option').forEach(option => {
-        option.classList.remove('active');
+    function selectCard(element) {
+      document.querySelectorAll('.game-card').forEach(card => {
+        card.classList.remove('selected');
       });
-      element.classList.add('active');
+      element.classList.add('selected');
     }
   </script>
 </body>
