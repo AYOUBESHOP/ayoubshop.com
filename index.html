@@ -94,12 +94,16 @@
       justify-content: space-between;
       border: 2px solid transparent;
       transition: 0.3s;
-      cursor: pointer;
     }
 
     .game-card.selected {
       border-color: var(--main-color);
       box-shadow: 0 0 10px var(--main-color);
+    }
+
+    .game-card:hover {
+      cursor: pointer;
+      border-color: var(--main-color);
     }
 
     .game-info {
@@ -177,7 +181,7 @@
 
   <h2>اختر لعبتك المفضلة</h2>
 
-  <div class="game-card" id="apple" onclick="selectCard('apple')">
+  <div class="game-card" onclick="selectCard(this, 'apple')">
     <div class="game-info">
       <h3>لعبة التفاحة</h3>
       <p>أكثر من 1000 مستوى آمن</p>
@@ -187,7 +191,7 @@
     </div>
   </div>
 
-  <div class="game-card" id="crash" onclick="selectCard('crash')">
+  <div class="game-card" onclick="selectCard(this, 'crash')">
     <div class="game-info">
       <h3>لعبة الطيارة</h3>
       <p>تحدي الطيران والسرعة</p>
@@ -200,19 +204,19 @@
   <button class="next-btn" onclick="goToGame()">التالي ←</button>
 
   <div class="footer-nav">
-    <a href="#">تيليجرام</a>
-    <a href="#">واتساب</a>
-    <a href="#">انستجرام</a>
+    <a href="https://t.me/groupayoub">تيليجرام</a>
+    <a href="https://wa.me/212621784339">واتساب</a>
+    <a href="https://www.instagram.com/ayoube_betting">انستجرام</a>
     <a href="#" class="active">الرئيسية</a>
   </div>
 
   <script>
     let selectedGame = '';
 
-    function selectCard(gameId) {
-      selectedGame = gameId;
+    function selectCard(card, gameName) {
       document.querySelectorAll('.game-card').forEach(c => c.classList.remove('selected'));
-      document.getElementById(gameId).classList.add('selected');
+      card.classList.add('selected');
+      selectedGame = gameName;
     }
 
     function goToGame() {
