@@ -2,27 +2,34 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AYOUB GAMES</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>الرئيسية</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Arial', sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Tajawal', sans-serif;
+    }
+    body {
       background-color: #000;
-      color: white;
-      direction: rtl;
+      color: #fff;
     }
     header {
+      background-color: #111;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 16px;
-      background-color: #111;
+    }
+    .nav-links {
+      display: flex;
+      gap: 15px;
     }
     .nav-links a {
-      color: white;
-      margin: 0 8px;
       text-decoration: none;
+      color: #8e8eff;
+      font-weight: 500;
     }
     .profile {
       display: flex;
@@ -30,104 +37,111 @@
       gap: 8px;
     }
     .profile img {
-      width: 36px;
-      height: 36px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
+      border: 2px solid #8e8eff;
     }
-    h2 {
+    .profile-name {
+      font-weight: bold;
+    }
+    .center {
       text-align: center;
-      margin: 24px 0 16px;
+      margin: 30px 0;
     }
-    .game-card {
-      background: #111;
-      margin: 12px auto;
+    .center img.avatar {
+      width: 100px;
+      border-radius: 50%;
+      border: 3px solid #8e8eff;
+      margin-bottom: 15px;
+    }
+    .game-box {
+      background: #1a1a1a;
       border-radius: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 15px;
+      margin: 15px auto;
       width: 90%;
-      padding: 12px;
+      max-width: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .game-card img {
+    .game-box img {
       width: 50px;
       height: 50px;
-      border-radius: 12px;
+      border-radius: 10px;
     }
     .game-info {
-      text-align: right;
+      flex: 1;
+      margin-right: 15px;
     }
-    .game-title {
-      font-size: 18px;
-      margin-bottom: 4px;
-    }
-    .game-desc {
-      font-size: 13px;
-      color: #ccc;
+    .game-info h3 {
+      margin-bottom: 5px;
+      font-size: 16px;
     }
     .btn-next {
-      background-color: #5a31ff;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      padding: 12px 28px;
-      font-size: 16px;
+      background: #5e3cff;
+      color: #fff;
+      padding: 10px 30px;
+      border-radius: 20px;
       display: block;
-      margin: 24px auto;
-      cursor: pointer;
+      margin: 30px auto;
+      font-weight: bold;
+      text-align: center;
+      width: fit-content;
     }
     .footer {
+      background-color: #111;
+      padding: 15px 0;
       display: flex;
       justify-content: space-around;
-      padding: 12px;
-      background-color: #111;
-      border-top: 1px solid #222;
-    }
-    .footer a {
-      color: white;
-      text-decoration: none;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
       font-size: 14px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="nav-links">
+      <a href="#">الرئيسية</a>
+      <a href="#">الألعاب</a>
+      <a href="#">تسجيل الدخول</a>
+    </div>
+    <div class="profile">
+      <span class="profile-name">AYOUB</span>
+      <img src="https://i.postimg.cc/VdknWbsX/image.png" alt="profile" />
+    </div>
+  </header>
 
-<header>
-  <div class="profile">
-    <img src="https://postimg.cc/VdknWbsX" alt="AYOUB">
-    <span>AYOUB</span>
+  <div class="center">
+    <img src="https://i.postimg.cc/VdknWbsX/image.png" class="avatar" alt="profile" />
+    <h2>اختر لعبتك المفضلة</h2>
   </div>
-  <div class="nav-links">
-    <a href="#">الرئيسية</a>
-    <a href="#">الألعاب</a>
-    <a href="#">تسجيل الدخول</a>
+
+  <div class="game-box">
+    <div class="game-info">
+      <h3>لعبة التفاحة</h3>
+      <p>أكثر من 1000 مستوى آمن</p>
+    </div>
+    <img src="https://i.postimg.cc/PpcsVDsN/image.png" alt="apple" />
   </div>
-</header>
 
-<h2>اختر لعبتك المفضلة</h2>
-
-<div class="game-card">
-  <div class="game-info">
-    <div class="game-title">لعبة التفاحة</div>
-    <div class="game-desc">أكثر من 1000 مستوى آمن</div>
+  <div class="game-box">
+    <div class="game-info">
+      <h3>لعبة الطيارة</h3>
+      <p>تحدي الطيران والسرعة</p>
+    </div>
+    <img src="https://i.postimg.cc/HJDrRJmZ/image.png" alt="crash" />
   </div>
-  <img src="https://i.postimg.cc/PpcsVDsN/apple.jpg" alt="لعبة التفاحة">
-</div>
 
-<div class="game-card">
-  <div class="game-info">
-    <div class="game-title">لعبة الطيارة</div>
-    <div class="game-desc">تحدي الطيران والسرعة</div>
+  <div class="btn-next">التالي ←</div>
+
+  <div class="footer">
+    <span>تيليجرام</span>
+    <span>واتساب</span>
+    <span>انستجرام</span>
   </div>
-  <img src="https://i.postimg.cc/HJDrRJmZ/crash.jpg" alt="لعبة الطيارة">
-</div>
-
-<button class="btn-next">التالي ←</button>
-
-<div class="footer">
-  <a href="#">تيليجرام</a>
-  <a href="#">واتساب</a>
-  <a href="#">انستجرام</a>
-</div>
-
 </body>
 </html>
