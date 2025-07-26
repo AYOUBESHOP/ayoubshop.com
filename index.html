@@ -1,17 +1,176 @@
-.game-box {
-  background: #111;
-  border-radius: 14px;
-  padding: 15px;
-  margin: 15px auto;
-  width: 90%;
-  max-width: 400px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid #7b61ff; /* بنفسجي */
-  box-shadow: 0 0 6px #7b61ff;
-  transition: transform 0.3s ease;
-}
-.game-box:hover {
-  transform: scale(1.02);
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختر لعبتك المفضلة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Tajawal', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      background: #111;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 15px;
+    }
+
+    .nav-links a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    .nav-links a.active {
+      color: #7b61ff;
+      font-weight: bold;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .profile img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .game-box {
+      background: #111;
+      border-radius: 14px;
+      padding: 15px;
+      margin: 15px auto;
+      width: 90%;
+      max-width: 400px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 2px solid #7b61ff;
+      box-shadow: 0 0 6px #7b61ff;
+      transition: transform 0.3s ease;
+    }
+
+    .game-box:hover {
+      transform: scale(1.02);
+    }
+
+    .game-box img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .game-info {
+      text-align: right;
+      flex: 1;
+      padding-right: 10px;
+    }
+
+    .game-info h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .game-info p {
+      margin: 5px 0 0;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .btn {
+      margin-top: 30px;
+      background: #7b61ff;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 24px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #111;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-around;
+      color: #aaa;
+      font-size: 14px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer div {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-links">
+      <a href="#" class="active">الرئيسية</a>
+      <a href="#">الألعاب</a>
+      <a href="#">تسجيل الدخول</a>
+    </div>
+    <div class="profile">
+      <span>AYOUBE</span>
+      <img src="https://postimg.cc/VdknWbsX" alt="profile" />
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>اختر لعبتك المفضلة</h2>
+
+    <div class="game-box">
+      <div class="game-info">
+        <h3>لعبة التفاحة</h3>
+        <p>أكثر من 1000 مستوى آمن</p>
+      </div>
+      <img src="https://i.postimg.cc/PpcsVDsN/image.png" alt="apple" />
+    </div>
+
+    <div class="game-box">
+      <div class="game-info">
+        <h3>لعبة الطيارة</h3>
+        <p>تحدي الطيران والسرعة</p>
+      </div>
+      <img src="https://i.postimg.cc/HJDrRJmZ/image.png" alt="crash" />
+    </div>
+
+    <button class="btn">التالي ←</button>
+  </div>
+
+  <footer>
+    <div>تيليجرام</div>
+    <div>واتساب</div>
+    <div>انستجرام</div>
+  </footer>
+
+</body>
+</html>
