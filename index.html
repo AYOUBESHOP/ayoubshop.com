@@ -222,3 +222,26 @@
   </script>
 </body>
 </html>
+<script>
+  let selectedGame = '';
+
+  function selectGame(game) {
+    selectedGame = game;
+    // حذف التحديد من كل البطاقات
+    document.querySelectorAll('.game-card').forEach(card => {
+      card.classList.remove('selected');
+    });
+    // تفعيل التحديد
+    document.getElementById(game).classList.add('selected');
+  }
+
+  function goToGame() {
+    if (selectedGame === 'apple') {
+      window.location.href = 'apple.html';
+    } else if (selectedGame === 'crash') {
+      window.location.href = 'crash.html';
+    } else {
+      alert('يرجى اختيار لعبة أولاً');
+    }
+  }
+</script>
