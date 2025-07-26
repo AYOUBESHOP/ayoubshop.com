@@ -46,7 +46,7 @@
       padding-bottom: 2px;
     }
 
-    .top-nav .profile {
+    .profile {
       display: flex;
       align-items: center;
       gap: 6px;
@@ -139,6 +139,12 @@
       cursor: pointer;
     }
 
+    .next-btn:disabled {
+      background-color: #444;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
     .footer-nav {
       position: fixed;
       bottom: 0;
@@ -201,22 +207,23 @@
     </div>
   </div>
 
-  <button class="next-btn" onclick="goToGame()">التالي ←</button>
+  <button class="next-btn" id="nextBtn" disabled onclick="goToGame()">التالي ←</button>
 
   <div class="footer-nav">
-    <a href="https://t.me/groupayoub">تيليجرام</a>
-    <a href="https://wa.me/212621784339">واتساب</a>
-    <a href="https://www.instagram.com/ayoube_betting">انستجرام</a>
+    <a href="#">تيليجرام</a>
+    <a href="#">واتساب</a>
+    <a href="#">انستجرام</a>
     <a href="#" class="active">الرئيسية</a>
   </div>
 
   <script>
     let selectedGame = '';
 
-    function selectCard(card, gameName) {
+    function selectCard(card, gameId) {
       document.querySelectorAll('.game-card').forEach(c => c.classList.remove('selected'));
       card.classList.add('selected');
-      selectedGame = gameName;
+      selectedGame = gameId;
+      document.getElementById('nextBtn').disabled = false;
     }
 
     function goToGame() {
@@ -224,8 +231,6 @@
         window.location.href = 'apple.html';
       } else if (selectedGame === 'crash') {
         window.location.href = 'crash.html';
-      } else {
-        alert('يرجى اختيار لعبة أولاً');
       }
     }
   </script>
