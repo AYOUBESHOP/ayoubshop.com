@@ -3,236 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AYOUBE - الألعاب</title>
+  <title>تسجيل الدخول</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --main-color: #7f50ff;
-      --bg-color: #000;
-      --text-light: #ccc;
-    }
-
     body {
-      margin: 0;
-      padding: 0;
-      background-color: var(--bg-color);
+      background-color: #000;
       font-family: 'Tajawal', sans-serif;
       color: white;
       text-align: center;
+      margin: 0;
+      padding: 0;
     }
-
-    .top-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #111;
-      padding: 10px 16px;
-      font-size: 14px;
+    .logo {
+      margin: 30px auto 10px;
     }
-
-    .top-nav .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .top-nav a {
-      color: var(--text-light);
-      text-decoration: none;
-    }
-
-    .top-nav a.active {
-      color: var(--main-color);
-      border-bottom: 2px solid var(--main-color);
-      padding-bottom: 2px;
-    }
-
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .profile img {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-    }
-
-    .profile-centered {
-      margin: 24px auto 16px;
+    .logo img {
       width: 100px;
-      height: 100px;
-      border: 3px solid var(--main-color);
       border-radius: 50%;
-      overflow: hidden;
+      border: 3px solid #00cc66;
+    }
+    .game-name {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #ccc;
+    }
+    .box {
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 400px;
+      background-color: #111;
+      border-radius: 16px;
+      border: 2px solid #00cc66;
+    }
+    input[type="text"] {
+      width: 90%;
+      padding: 12px;
+      margin-bottom: 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #222;
+      color: white;
+    }
+    .platforms {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .platforms label {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .platforms input {
+      transform: scale(1.2);
+    }
+    .confirm-btn {
+      background-color: #00cc66;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 90%;
+      margin-top: 10px;
+    }
+    .footer-icons {
       display: flex;
       justify-content: center;
-      align-items: center;
-      background-color: #222;
+      gap: 30px;
+      margin-top: 30px;
+      font-size: 24px;
     }
-
-    .profile-centered img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    h2 {
-      font-size: 20px;
-      margin-bottom: 24px;
-    }
-
-    .game-card {
-      background-color: #111;
-      margin: 12px auto;
-      padding: 14px 20px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 380px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border: 2px solid transparent;
-      transition: 0.3s;
-    }
-
-    .game-card.selected {
-      border-color: var(--main-color);
-      box-shadow: 0 0 10px var(--main-color);
-    }
-
-    .game-card:hover {
-      cursor: pointer;
-      border-color: var(--main-color);
-    }
-
-    .game-info {
-      text-align: right;
-    }
-
-    .game-info h3 {
-      margin: 0;
-      font-size: 18px;
-      color: #fff;
-    }
-
-    .game-info p {
-      margin: 2px 0 0;
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    .game-img img {
-      width: 50px;
-      height: 50px;
-      border-radius: 10px;
-    }
-
-    .next-btn {
-      margin: 24px auto;
-      padding: 12px 40px;
-      background-color: var(--main-color);
-      color: #fff;
-      border: none;
-      border-radius: 24px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .next-btn:disabled {
-      background-color: #444;
-      cursor: not-allowed;
-      opacity: 0.5;
-    }
-
-    .footer-nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: #111;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0;
-      border-top: 1px solid #222;
-    }
-
-    .footer-nav a {
-      color: #ccc;
+    .footer-icons a {
+      color: white;
       text-decoration: none;
-      font-size: 14px;
-    }
-
-    .footer-nav a.active {
-      color: var(--main-color);
-      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <div class="top-nav">
-    <div class="nav-links">
-      <a href="#" class="active">الرئيسية</a>
-      <a href="#">التوقعات</a>
-      <a href="#">تسجيل الدخول</a>
+  <div class="logo">
+    <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" alt="AYOUB Logo" />
+  </div>
+  <div class="game-name" id="gameName">لعبة</div>
+
+  <div class="box">
+    <input type="text" placeholder="أدخل كود اللعبة" />
+
+    <div class="platforms">
+      <label><input type="checkbox" /> <span style="color:green;">LINEBET</span></label>
+      <label><input type="checkbox" /> <span style="color:lightblue;">1XBET</span></label>
+      <label><input type="checkbox" /> <span style="color:yellow;">MELBET</span></label>
+      <label><input type="checkbox" /> <span style="color:#0099ff;">Megapari</span></label>
+      <label><input type="checkbox" /> <span style="color:red;">888starz</span></label>
+      <label><input type="checkbox" /> <span style="color:gold;">BETWINNER</span></label>
     </div>
-    <div class="profile">
-      <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" alt="AYOUB" />
-    </div>
+
+    <button class="confirm-btn">تأكيد</button>
   </div>
 
-  <div class="profile-centered">
-    <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" alt="AYOUB" />
-  </div>
-
-  <h2>اختر لعبتك المفضلة</h2>
-
-  <div class="game-card" onclick="selectCard(this, 'apple')">
-    <div class="game-info">
-      <h3>لعبة التفاحة</h3>
-      <p>أكثر من 1000 مستوى آمن</p>
-    </div>
-    <div class="game-img">
-      <img src="https://i.postimg.cc/PpcsVDsN/apple.jpg" alt="apple game" />
-    </div>
-  </div>
-
-  <div class="game-card" onclick="selectCard(this, 'crash')">
-    <div class="game-info">
-      <h3>لعبة الطيارة</h3>
-      <p>تحدي الطيران والسرعة</p>
-    </div>
-    <div class="game-img">
-      <img src="https://i.postimg.cc/HJDrRJmZ/crash.jpg" alt="crash game" />
-    </div>
-  </div>
-
-  <button class="next-btn" id="nextBtn" disabled onclick="goToGame()">التالي ←</button>
-
-  <div class="footer-nav">
-    <a href="#">تيليجرام</a>
-    <a href="#">واتساب</a>
-    <a href="#">انستجرام</a>
-    <a href="#" class="active">الرئيسية</a>
+  <div class="footer-icons">
+    <a href="https://t.me/groupayoub" target="_blank">📢</a>
+    <a href="#">🛒</a>
   </div>
 
   <script>
-    let selectedGame = '';
-
-    function selectCard(card, gameId) {
-      document.querySelectorAll('.game-card').forEach(c => c.classList.remove('selected'));
-      card.classList.add('selected');
-      selectedGame = gameId;
-      document.getElementById('nextBtn').disabled = false;
-    }
-
-    function goToGame() {
-      if (selectedGame === 'apple') {
-        window.location.href = 'apple.html';
-      } else if (selectedGame === 'crash') {
-        window.location.href = 'crash.html';
-      }
+    const params = new URLSearchParams(window.location.search);
+    const game = params.get("game");
+    if (game) {
+      document.getElementById("gameName").textContent = `اللعبة: ${game === 'apple' ? 'لعبة التفاحة' : 'لعبة الطيارة'}`;
     }
   </script>
+
 </body>
 </html>
