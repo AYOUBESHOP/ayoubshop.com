@@ -3,134 +3,235 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>تسجيل الدخول</title>
+  <title>AYOUBE - الألعاب</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --main-color: #7f50ff;
+      --bg-color: #000;
+      --text-light: #ccc;
+    }
+
     body {
-      background: #000;
-      color: white;
-      font-family: 'Tajawal', sans-serif;
       margin: 0;
       padding: 0;
+      background-color: var(--bg-color);
+      font-family: 'Tajawal', sans-serif;
+      color: white;
       text-align: center;
     }
 
-    .top-bar {
-      background: #111;
-      padding: 14px;
-      font-size: 16px;
-      border-bottom: 1px solid #222;
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #111;
+      padding: 10px 16px;
+      font-size: 14px;
     }
 
-    .profile-img {
-      margin: 24px auto;
+    .top-nav .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .top-nav a {
+      color: var(--text-light);
+      text-decoration: none;
+    }
+
+    .top-nav a.active {
+      color: var(--main-color);
+      border-bottom: 2px solid var(--main-color);
+      padding-bottom: 2px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .profile img {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+    }
+
+    .profile-centered {
+      margin: 24px auto 16px;
       width: 100px;
       height: 100px;
+      border: 3px solid var(--main-color);
       border-radius: 50%;
-      border: 3px solid #7f50ff;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #222;
     }
 
-    .profile-img img {
+    .profile-centered img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
     h2 {
-      margin: 10px 0 5px;
+      font-size: 20px;
+      margin-bottom: 24px;
     }
 
-    .desc {
-      color: #aaa;
-      margin-bottom: 30px;
-    }
-
-    .form-group {
-      width: 90%;
-      max-width: 360px;
+    .game-card {
+      background-color: #111;
       margin: 12px auto;
+      padding: 14px 20px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 2px solid transparent;
+      transition: 0.3s;
     }
 
-    input {
-      width: 100%;
-      padding: 12px;
-      background: #111;
-      border: 1px solid #333;
+    .game-card.selected {
+      border-color: var(--main-color);
+      box-shadow: 0 0 10px var(--main-color);
+    }
+
+    .game-card:hover {
+      cursor: pointer;
+      border-color: var(--main-color);
+    }
+
+    .game-info {
+      text-align: right;
+    }
+
+    .game-info h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .game-info p {
+      margin: 2px 0 0;
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    .game-img img {
+      width: 50px;
+      height: 50px;
       border-radius: 10px;
-      color: white;
-      font-size: 15px;
     }
 
-    select {
-      width: 100%;
-      padding: 12px;
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 10px;
-      color: white;
-      font-size: 15px;
-    }
-
-    .start-btn {
-      margin-top: 24px;
-      background: #7f50ff;
-      color: white;
-      padding: 14px;
+    .next-btn {
+      margin: 24px auto;
+      padding: 12px 40px;
+      background-color: var(--main-color);
+      color: #fff;
       border: none;
       border-radius: 24px;
       font-size: 16px;
-      width: 90%;
-      max-width: 360px;
       cursor: pointer;
     }
 
-    .back-link {
-      margin-top: 20px;
-      display: block;
-      color: #7f50ff;
+    .next-btn:disabled {
+      background-color: #444;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    .footer-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #111;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #222;
+    }
+
+    .footer-nav a {
+      color: #ccc;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 14px;
+    }
+
+    .footer-nav a.active {
+      color: var(--main-color);
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <div class="top-bar">تسجيل الدخول</div>
+  <div class="top-nav">
+    <div class="nav-links">
+      <a href="#" class="active">الرئيسية</a>
+      <a href="#">التوقعات</a>
+      <a href="#">تسجيل الدخول</a>
+    </div>
+    <div class="profile">
+      <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" alt="AYOUB" />
+    </div>
+  </div>
 
-  <div class="profile-img">
+  <div class="profile-centered">
     <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" alt="AYOUB" />
   </div>
 
-  <h2>إدخال الكود</h2>
-  <p class="desc">الرجاء إدخال كود اللعبة ومعرّف الحساب</p>
+  <h2>اختر لعبتك المفضلة</h2>
 
-  <div class="form-group">
-    <input type="text" placeholder="كود اللعبة" />
+  <div class="game-card" onclick="selectCard(this, 'apple')">
+    <div class="game-info">
+      <h3>لعبة التفاحة</h3>
+      <p>أكثر من 1000 مستوى آمن</p>
+    </div>
+    <div class="game-img">
+      <img src="https://i.postimg.cc/PpcsVDsN/apple.jpg" alt="apple game" />
+    </div>
   </div>
 
-  <div class="form-group">
-    <input type="text" placeholder="معرّف الحساب" />
+  <div class="game-card" onclick="selectCard(this, 'crash')">
+    <div class="game-info">
+      <h3>لعبة الطيارة</h3>
+      <p>تحدي الطيران والسرعة</p>
+    </div>
+    <div class="game-img">
+      <img src="https://i.postimg.cc/HJDrRJmZ/crash.jpg" alt="crash game" />
+    </div>
   </div>
 
-  <div class="form-group">
-    <select id="gameName">
-      <option value="">اختر اللعبة</option>
-      <option value="لعبة التفاحة">لعبة التفاحة</option>
-      <option value="لعبة الطيارة">لعبة الطيارة</option>
-    </select>
+  <button class="next-btn" id="nextBtn" disabled onclick="goToGame()">التالي ←</button>
+
+  <div class="footer-nav">
+    <a href="#">تيليجرام</a>
+    <a href="#">واتساب</a>
+    <a href="#">انستجرام</a>
+    <a href="#" class="active">الرئيسية</a>
   </div>
-
-  <button class="start-btn">بدء اللعبة ←</button>
-
-  <a class="back-link" href="index.html">← العودة إلى قائمة الألعاب</a>
 
   <script>
-    // التقاط اسم اللعبة من URL وإدراجه تلقائياً
-    const urlParams = new URLSearchParams(window.location.search);
-    const game = urlParams.get('game');
-    if (game) {
-      document.getElementById('gameName').value = game;
+    let selectedGame = '';
+
+    function selectCard(card, gameId) {
+      document.querySelectorAll('.game-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      selectedGame = gameId;
+      document.getElementById('nextBtn').disabled = false;
+    }
+
+    function goToGame() {
+      if (selectedGame === 'apple') {
+        window.location.href = 'apple.html';
+      } else if (selectedGame === 'crash') {
+        window.location.href = 'crash.html';
+      }
     }
   </script>
 </body>
