@@ -1,20 +1,104 @@
-<header style="background: #fff; padding: 16px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,0.05); font-family: 'Tajawal', sans-serif;">
-  <div style="display: flex; align-items: center; gap: 12px;">
-    <img src="https://raw.githubusercontent.com/ayoubeshop/ayoubshop.com/main/logo.jpg" alt="logo" style="width: 52px; height: 52px; border-radius: 50%;">
-    <div>
-      <div style="font-weight: bold; font-size: 20px;">STORE</div>
-      <div style="font-size: 14px; color: #777;">AYOUBE KING SHOP</div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>AYOUBE KING SHOP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-container img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+
+    .logo-text strong {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .logo-text span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      text-align: left;
+    }
+
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #000;
+    }
+
+    .contact-info img {
+      width: 18px;
+      height: 18px;
+      margin-left: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .contact-info {
+        align-items: flex-start;
+        text-align: right;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo-container">
+      <img src="https://i.postimg.cc/mDcBMX6M/64-F0-F9-BA-5-D3-C-4-C64-99-EE-339179-AAA4-B5.jpg" alt="logo">
+      <div class="logo-text">
+        <strong>AYOUBE KING SHOP</strong>
+        <span>متجر الشحن الرسمي</span>
+      </div>
+    </div>
+    <div class="contact-info">
+      <div><img src="https://cdn-icons-png.flaticon.com/512/126/126509.png" alt="phone">+212 621-784339</div>
+      <div><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="whatsapp">+212 621-784339</div>
     </div>
   </div>
 
-  <div style="text-align: right; font-size: 14px;">
-    <div style="margin-bottom: 6px;">
-      <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="phone" style="width: 16px; vertical-align: middle;">
-      <span style="margin-right: 6px;">+212 621-784339</span>
-    </div>
-    <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="whatsapp" style="width: 16px; vertical-align: middle;">
-      <span style="margin-right: 6px;">+212 621-784339</span>
-    </div>
-  </div>
-</header>
+</body>
+</html>
