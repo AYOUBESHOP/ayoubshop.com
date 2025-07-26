@@ -3,188 +3,227 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>تسجيل لعبة التفاحة</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <title>AYOUBE - الألعاب</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --main-color: #7f50ff;
+      --bg-color: #000;
+      --text-light: #ccc;
+    }
+
     body {
       margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
       font-family: 'Tajawal', sans-serif;
-      background-color: #0e0e0e;
       color: white;
       text-align: center;
     }
 
-    header {
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background-color: #111;
       padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      font-size: 14px;
     }
 
-    .nav-title {
+    .top-nav .nav-links {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      color: #a78bfa;
+      gap: 20px;
     }
 
-    .nav-tabs {
-      display: flex;
-      gap: 24px;
-    }
-
-    .nav-tabs a {
-      color: #aaa;
+    .top-nav a {
+      color: var(--text-light);
       text-decoration: none;
-      font-size: 15px;
     }
 
-    .nav-tabs a.active {
-      color: #a78bfa;
-      border-bottom: 2px solid #a78bfa;
+    .top-nav a.active {
+      color: var(--main-color);
+      border-bottom: 2px solid var(--main-color);
       padding-bottom: 2px;
     }
 
-    .profile-img {
-      width: 34px;
-      height: 34px;
+    .top-nav .profile {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .profile img {
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
-      border: 2px solid #a78bfa;
+    }
+
+    .profile-centered {
+      margin: 24px auto 16px;
+      width: 100px;
+      height: 100px;
+      border: 3px solid var(--main-color);
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #222;
+    }
+
+    .profile-centered img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
 
-    .container {
-      padding: 24px;
-    }
-
-    .circle-avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin: 0 auto 16px;
-      border: 4px solid #a78bfa;
-      background-image: url('https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg');
-      background-size: cover;
-      background-position: center;
-    }
-
     h2 {
-      margin-bottom: 8px;
-      font-size: 22px;
+      font-size: 20px;
+      margin-bottom: 24px;
     }
 
-    p {
-      margin-bottom: 20px;
-      font-size: 14px;
-      color: #ccc;
-    }
-
-    input, select {
+    .game-card {
+      background-color: #111;
+      margin: 12px auto;
+      padding: 14px 20px;
+      border-radius: 12px;
       width: 90%;
-      max-width: 400px;
-      padding: 12px;
-      margin-bottom: 16px;
-      background-color: #1e1e1e;
-      border: 1px solid #333;
-      color: white;
-      font-size: 15px;
-      border-radius: 8px;
-    }
-
-    button {
-      width: 90%;
-      max-width: 400px;
-      padding: 14px;
-      font-size: 16px;
-      background-color: #7c3aed;
-      color: white;
-      border: none;
-      border-radius: 30px;
+      max-width: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 2px solid transparent;
+      transition: 0.3s;
       cursor: pointer;
-      margin-top: 10px;
     }
 
-    button:hover {
-      background-color: #6a28d9;
+    .game-card.selected {
+      border-color: var(--main-color);
+      box-shadow: 0 0 10px var(--main-color);
     }
 
-    .back-link {
-      margin-top: 18px;
-      display: inline-block;
-      color: #a78bfa;
-      text-decoration: none;
+    .game-info {
+      text-align: right;
+    }
+
+    .game-info h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .game-info p {
+      margin: 2px 0 0;
       font-size: 14px;
+      color: #aaa;
     }
 
-    footer {
+    .game-img img {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+    }
+
+    .next-btn {
+      margin: 24px auto;
+      padding: 12px 40px;
+      background-color: var(--main-color);
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .footer-nav {
       position: fixed;
       bottom: 0;
       width: 100%;
       background-color: #111;
-      padding: 12px 0;
       display: flex;
       justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #222;
     }
 
-    footer a {
+    .footer-nav a {
       color: #ccc;
       text-decoration: none;
       font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
-    footer a.active {
-      color: #a78bfa;
-    }
-
-    footer a i {
-      font-size: 20px;
-      margin-bottom: 4px;
+    .footer-nav a.active {
+      color: var(--main-color);
+      font-weight: bold;
     }
   </style>
-  <script src="https://kit.fontawesome.com/3b8fdf49c9.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <header>
-    <div class="nav-title">
-      <span>its</span>
-      <span style="color:white;">Ayoub</span>
-      <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" class="profile-img" alt="profile" />
-    </div>
-    <div class="nav-tabs">
+  <div class="top-nav">
+    <div class="nav-links">
       <a href="#" class="active">الرئيسية</a>
       <a href="#">التوقعات</a>
       <a href="#">تسجيل الدخول</a>
     </div>
-  </header>
-
-  <div class="container">
-    <div class="circle-avatar"></div>
-    <h2>إدخال الكود</h2>
-    <p>الرجاء إدخال كود اللعبة ومعرف الحساب</p>
-
-    <input type="text" placeholder="كود اللعبة" />
-    <input type="text" placeholder="معرف الحساب" />
-    <select>
-      <option selected>لعبة التفاحة</option>
-    </select>
-
-    <button>بدء اللعبة ←</button>
-    <a href="index.html" class="back-link">العودة إلى قائمة الألعاب ←</a>
+    <div class="profile">
+      <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" alt="AYOUB" />
+    </div>
   </div>
 
-  <footer>
-    <a href="#" class="active"><i class="fas fa-home"></i>الرئيسية</a>
-    <a href="https://www.instagram.com/ayoube_betting"><i class="fab fa-instagram"></i>انستجرام</a>
-    <a href="https://wa.me/212621784339"><i class="fab fa-whatsapp"></i>واتساب</a>
-    <a href="#"><i class="fab fa-telegram"></i>تيليجرام</a>
-  </footer>
+  <div class="profile-centered">
+    <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" alt="AYOUB" />
+  </div>
 
+  <h2>اختر لعبتك المفضلة</h2>
+
+  <div class="game-card" id="apple" onclick="selectCard('apple')">
+    <div class="game-info">
+      <h3>لعبة التفاحة</h3>
+      <p>أكثر من 1000 مستوى آمن</p>
+    </div>
+    <div class="game-img">
+      <img src="https://i.postimg.cc/PpcsVDsN/apple.jpg" alt="apple game" />
+    </div>
+  </div>
+
+  <div class="game-card" id="crash" onclick="selectCard('crash')">
+    <div class="game-info">
+      <h3>لعبة الطيارة</h3>
+      <p>تحدي الطيران والسرعة</p>
+    </div>
+    <div class="game-img">
+      <img src="https://i.postimg.cc/HJDrRJmZ/crash.jpg" alt="crash game" />
+    </div>
+  </div>
+
+  <button class="next-btn" onclick="goToGame()">التالي ←</button>
+
+  <div class="footer-nav">
+    <a href="#">تيليجرام</a>
+    <a href="#">واتساب</a>
+    <a href="#">انستجرام</a>
+    <a href="#" class="active">الرئيسية</a>
+  </div>
+
+  <script>
+    let selectedGame = '';
+
+    function selectCard(gameId) {
+      selectedGame = gameId;
+      document.querySelectorAll('.game-card').forEach(c => c.classList.remove('selected'));
+      document.getElementById(gameId).classList.add('selected');
+    }
+
+    function goToGame() {
+      if (selectedGame === 'apple') {
+        window.location.href = 'apple.html';
+      } else if (selectedGame === 'crash') {
+        window.location.href = 'crash.html';
+      } else {
+        alert('يرجى اختيار لعبة أولاً');
+      }
+    }
+  </script>
 </body>
 </html>
