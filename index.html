@@ -2,124 +2,49 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>تسجيل الدخول</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextBet - الصفحة الرئيسية</title>
   <style>
-    body {
-      background-color: #000;
-      font-family: 'Tajawal', sans-serif;
-      color: white;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-    }
-    .logo {
-      margin: 30px auto 10px;
-    }
-    .logo img {
-      width: 100px;
-      border-radius: 50%;
-      border: 3px solid #00cc66;
-    }
-    .game-name {
-      font-size: 20px;
-      margin-top: 10px;
-      color: #ccc;
-    }
-    .box {
-      margin: 30px auto;
-      padding: 20px;
-      max-width: 400px;
-      background-color: #111;
-      border-radius: 16px;
-      border: 2px solid #00cc66;
-    }
-    input[type="text"] {
-      width: 90%;
-      padding: 12px;
-      margin-bottom: 16px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      background-color: #222;
-      color: white;
-    }
-    .platforms {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .platforms label {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .platforms input {
-      transform: scale(1.2);
-    }
-    .confirm-btn {
-      background-color: #00cc66;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      width: 90%;
-      margin-top: 10px;
-    }
-    .footer-icons {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
-      font-size: 24px;
-    }
-    .footer-icons a {
-      color: white;
-      text-decoration: none;
-    }
+    body { margin:0; font-family:Arial,sans-serif; background:#e3f2fd; }
+    header { background:#1e88e5; color:#fff; padding:15px; text-align:center; font-size:20px; font-weight:bold; }
+    .top-buttons { display:flex; justify-content:center; gap:10px; margin:15px 0; }
+    .top-buttons button { background:#1976d2; border:none; color:#fff; padding:10px 20px; border-radius:5px; font-weight:bold; cursor:pointer; }
+    .games { display:flex; overflow-x:auto; gap:15px; padding:0 15px; }
+    .game-card { background:#fff; min-width:180px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); padding:10px; text-align:center; }
+    .game-card img { width:100%; border-radius:8px; }
+    footer { background:#1e88e5; color:#fff; display:flex; justify-content:space-around; padding:10px; position:fixed; bottom:0; width:100%; font-size:14px; }
   </style>
 </head>
 <body>
 
-  <div class="logo">
-    <img src="https://i.postimg.cc/VdknWbsX/AYOUBLOGO.jpg" alt="AYOUB Logo" />
+  <header>NextBet 🎯</header>
+
+  <div class="top-buttons">
+    <button>تسجيل الدخول</button>
+    <button>تسجيل</button>
   </div>
-  <div class="game-name" id="gameName">لعبة</div>
 
-  <div class="box">
-    <input type="text" placeholder="أدخل كود اللعبة" />
-
-    <div class="platforms">
-      <label><input type="checkbox" /> <span style="color:green;">LINEBET</span></label>
-      <label><input type="checkbox" /> <span style="color:lightblue;">1XBET</span></label>
-      <label><input type="checkbox" /> <span style="color:yellow;">MELBET</span></label>
-      <label><input type="checkbox" /> <span style="color:#0099ff;">Megapari</span></label>
-      <label><input type="checkbox" /> <span style="color:red;">888starz</span></label>
-      <label><input type="checkbox" /> <span style="color:gold;">BETWINNER</span></label>
+  <div class="games">
+    <div class="game-card">
+      <img src="https://i.postimg.cc/PpcsVDsN/apple.jpg" alt="Apple Game">
+      <p>🍏 لعبة التفاحة</p>
     </div>
-
-    <button class="confirm-btn">تأكيد</button>
+    <div class="game-card">
+      <img src="https://i.postimg.cc/HJDr3FQx/crash.jpg" alt="Crash Game">
+      <p>💥 لعبة الطيارة</p>
+    </div>
+    <div class="game-card">
+      <img src="https://i.postimg.cc/gJXBGnBm/jackpot.jpg" alt="Jackpot">
+      <p>🎰 كوين جاكبوت</p>
+    </div>
   </div>
 
-  <div class="footer-icons">
-    <a href="https://t.me/groupayoub" target="_blank">📢</a>
-    <a href="#">🛒</a>
-  </div>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const game = params.get("game");
-    if (game) {
-      document.getElementById("gameName").textContent = `اللعبة: ${game === 'apple' ? 'لعبة التفاحة' : 'لعبة الطيارة'}`;
-    }
-  </script>
+  <footer>
+    <div>🏆 الرياضة</div>
+    <div>🎮 كازينو</div>
+    <div>🔐 تسجيل</div>
+    <div>📋 القائمة</div>
+  </footer>
 
 </body>
 </html>
