@@ -1,50 +1,162 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NextBet - الصفحة الرئيسية</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AYOUB SHOP — Premium Accounts</title>
+  <meta name="description" content="AYOUB SHOP — Premium Accounts" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
-    body { margin:0; font-family:Arial,sans-serif; background:#e3f2fd; }
-    header { background:#1e88e5; color:#fff; padding:15px; text-align:center; font-size:20px; font-weight:bold; }
-    .top-buttons { display:flex; justify-content:center; gap:10px; margin:15px 0; }
-    .top-buttons button { background:#1976d2; border:none; color:#fff; padding:10px 20px; border-radius:5px; font-weight:bold; cursor:pointer; }
-    .games { display:flex; overflow-x:auto; gap:15px; padding:0 15px; }
-    .game-card { background:#fff; min-width:180px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); padding:10px; text-align:center; }
-    .game-card img { width:100%; border-radius:8px; }
-    footer { background:#1e88e5; color:#fff; display:flex; justify-content:space-around; padding:10px; position:fixed; bottom:0; width:100%; font-size:14px; }
+    :root{
+      --bg:#0e1419;
+      --panel:#121a21;
+      --muted:#9eb0bd;
+      --accent:#ff3b2f;
+      --accent-2:#ff6a3d;
+      --text:#e9eef2;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Arial,sans-serif; color:var(--text); background:var(--bg);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    .container{max-width:1100px;margin:0 auto;padding:0 18px}
+    a{color:inherit;text-decoration:none}
+
+    /* Header */
+    .header{
+      position:fixed; inset:0 0 auto 0; height:64px; display:flex; align-items:center;
+      background:linear-gradient(to bottom, rgba(14,20,25,.95), rgba(14,20,25,.5) 60%, transparent);
+      backdrop-filter:saturate(140%) blur(6px); z-index:20;
+    }
+    .brand{display:flex; align-items:center; gap:10px}
+    .brand-name{letter-spacing:.12em; font-weight:700; font-size:18px}
+    .brand .logo{width:26px;height:26px}
+    .brand .logo svg{width:100%;height:100%;display:block}
+    .red-line{position:absolute; bottom:0; left:0; right:0; height:2px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2)); opacity:.9}
+
+    /* Hero */
+    .hero{
+      position:relative; min-height:100svh; display:grid; place-items:center; text-align:center; overflow:hidden;
+    }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+      filter:grayscale(60%) contrast(1.05) brightness(.55);
+      transform:scale(1.02);
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0;
+      background:radial-gradient(60% 60% at 50% 55%, rgba(255, 80, 45,.18), transparent 60%);
+      mix-blend-mode:screen;
+    }
+    .hero-inner{position:relative; z-index:1; padding:120px 16px 80px}
+
+    .logo-big{
+      width:82px; height:82px; margin:0 auto 14px; display:grid; place-items:center; border-radius:50%;
+      background:linear-gradient(135deg, rgba(255,60,40,.25), rgba(255,120,70,.08));
+      box-shadow:0 10px 30px rgba(255,70,50,.18) inset, 0 12px 60px rgba(255,70,50,.15);
+    }
+    .logo-big svg{width:44px;height:44px;display:block}
+
+    .title{
+      font-weight:800; line-height:1; margin:0;
+      font-size: clamp(42px, 8vw, 96px);
+      letter-spacing:.15em;
+      background:linear-gradient(180deg,#ff8a5c 0%, #ff4b34 40%, #ff6a3d 100%);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      text-shadow:0 8px 22px rgba(255,75,52,.18);
+    }
+    .subtitle{
+      margin:14px 0 28px; color:var(--muted); font-weight:600; letter-spacing:.35em; text-transform:uppercase;
+    }
+    .cta{
+      display:inline-block; padding:14px 26px; border-radius:12px; font-weight:800; letter-spacing:.08em;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff;
+      box-shadow:0 10px 30px rgba(255,70,50,.35); transform:translateY(0); transition:.2s ease;
+    }
+    .cta:hover{transform:translateY(-2px)}
+    .cta:active{transform:translateY(0)}
+
+    /* Section */
+    section{background:var(--panel)}
+    .features{padding:64px 0; border-top:1px solid rgba(255,255,255,.06)}
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:18px}
+    .card h3{margin:6px 0 8px}
+    .card p{margin:0; color:#b7c4ce}
+    @media (max-width:800px){.grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-
-  <header>NextBet 🎯</header>
-
-  <div class="top-buttons">
-    <button>تسجيل الدخول</button>
-    <button>تسجيل</button>
-  </div>
-
-  <div class="games">
-    <div class="game-card">
-      <img src="https://i.postimg.cc/PpcsVDsN/apple.jpg" alt="Apple Game">
-      <p>🍏 لعبة التفاحة</p>
+  <!-- Header -->
+  <header class="header">
+    <div class="container" style="width:100%">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- small A logo -->
+          <svg viewBox="0 0 64 64" fill="none">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#ff3b2f"/><stop offset="1" stop-color="#ff6a3d"/>
+              </linearGradient>
+            </defs>
+            <path d="M12 50 L30 10 Q32 6 34 10 L52 50 Q54 54 50 54 L46 54 Q44 54 43 52 L38 40 H26 L21 52 Q20 54 18 54 L14 54 Q10 54 12 50Z" fill="url(#g)"/>
+            <path d="M28 36 L36 36" stroke="#1b2228" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="brand-name">AYOUB SHOP</div>
+      </div>
     </div>
-    <div class="game-card">
-      <img src="https://i.postimg.cc/HJDr3FQx/crash.jpg" alt="Crash Game">
-      <p>💥 لعبة الطيارة</p>
-    </div>
-    <div class="game-card">
-      <img src="https://i.postimg.cc/gJXBGnBm/jackpot.jpg" alt="Jackpot">
-      <p>🎰 كوين جاكبوت</p>
-    </div>
-  </div>
+    <div class="red-line"></div>
+  </header>
 
-  <footer>
-    <div>🏆 الرياضة</div>
-    <div>🎮 كازينو</div>
-    <div>🔐 تسجيل</div>
-    <div>📋 القائمة</div>
-  </footer>
+  <!-- Hero -->
+  <main class="hero">
+    <div class="hero-inner">
+      <div class="logo-big" aria-hidden="true">
+        <!-- big A logo -->
+        <svg viewBox="0 0 64 64" fill="none">
+          <defs>
+            <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#ff3b2f"/><stop offset="1" stop-color="#ff6a3d"/>
+            </linearGradient>
+          </defs>
+          <path d="M12 50 L30 10 Q32 6 34 10 L52 50 Q54 54 50 54 L46 54 Q44 54 43 52 L38 40 H26 L21 52 Q20 54 18 54 L14 54 Q10 54 12 50Z" fill="url(#g2)"/>
+          <path d="M28 36 L36 36" stroke="#1b2228" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
 
+      <h1 class="title">AYOUB<br/>SHOP</h1>
+      <div class="subtitle">PREMIUM ACCOUNTS</div>
+
+      <a class="cta" href="#features">Get Started</a>
+    </div>
+  </main>
+
+  <!-- Features (optional) -->
+  <section id="features" class="features">
+    <div class="container">
+      <div class="grid">
+        <div class="card">
+          <h3>Fast Delivery</h3>
+          <p>Instant access to your premium accounts.</p>
+        </div>
+        <div class="card">
+          <h3>Secure</h3>
+          <p>Protected checkout and account replacement policy.</p>
+        </div>
+        <div class="card">
+          <h3>Support</h3>
+          <p>We’re here 24/7 for your questions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
